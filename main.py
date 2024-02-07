@@ -28,7 +28,7 @@ def image():
 
 def on_forever():
     global x
-    if TobbieII.rblock(900):
+    if TobbieII.rblock(900) or TobbieII.lblock(900):
         image()
         x = 1 + randint(0, 2)
         basic.pause(2000)
@@ -61,12 +61,15 @@ def on_forever():
         TobbieII.backward()
         basic.pause(500)
         TobbieII.stopwalk()
+        basic.pause(500)
         TobbieII.leftward()
         basic.pause(500)
         TobbieII.rightward()
         basic.pause(500)
         TobbieII.stopturn()
+        basic.pause(500)
         TobbieII.shake_head(2)
         music.start_melody(music.built_in_melody(Melodies.ENTERTAINER),
             MelodyOptions.ONCE)
+        basic.show_icon(IconNames.HAPPY)
 basic.forever(on_forever)

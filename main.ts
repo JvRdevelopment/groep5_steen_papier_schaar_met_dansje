@@ -27,7 +27,7 @@ function image () {
     basic.clearScreen()
 }
 basic.forever(function () {
-    if (TobbieII.RBlock(900)) {
+    if (TobbieII.RBlock(900) || TobbieII.LBlock(900)) {
         image()
         x = 1 + randint(0, 2)
         basic.pause(2000)
@@ -72,5 +72,6 @@ basic.forever(function () {
         basic.pause(500)
         TobbieII.shake_head(2)
         music.startMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.Once)
+        basic.showIcon(IconNames.Happy)
     }
 })
