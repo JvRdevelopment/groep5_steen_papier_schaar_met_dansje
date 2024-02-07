@@ -63,11 +63,13 @@ basic.forever(function () {
         TobbieII.backward()
         basic.pause(500)
         TobbieII.stopwalk()
+        basic.pause(500)
         TobbieII.leftward()
         basic.pause(500)
         TobbieII.rightward()
         basic.pause(500)
         TobbieII.stopturn()
+        basic.pause(500)
         TobbieII.shake_head(2)
         music.startMelody(music.builtInMelody(Melodies.Entertainer), MelodyOptions.Once)
     }
